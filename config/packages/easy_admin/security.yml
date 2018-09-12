@@ -1,0 +1,3 @@
+# security:
+#     access_control:
+#          - { path: ^/easyadmin, roles: ROLE_ADMIN }
