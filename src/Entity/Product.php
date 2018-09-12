@@ -5,10 +5,13 @@ namespace App\Entity;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
+ * @Vich\Uploadable
  * @ORM\Entity(repositoryClass="App\Repository\ProductRepository")
  */
+
 class Product
 {
     /**
@@ -39,9 +42,10 @@ class Product
     private $created_at;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @var string[]
+     * @ORM\Column(type="simple_array")
      */
-    private $tags;
+    private $tags = array();
 
     /**
      * @ORM\Column(type="bigint", nullable=true)
@@ -59,9 +63,15 @@ class Product
     private $image;
 
     /**
-     * @ORM\Column(type="text", nullable=true)
+     * @Vich\UploadableField(mapping="product_images", fileNameProperty="image")
+     * @var File
      */
-    private $features;
+    private $imageFile;
+
+    /**
+     * @ORM\Column(type="simple_array")
+     */
+    private $features = array();
 
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Category", inversedBy="products")
@@ -126,16 +136,24 @@ class Product
         return $this;
     }
 
-    public function getTags(): ?string
+    /**
+     * Get the list of tags associated to the product.
+     *
+     * @return \string[]
+     */
+    public function getTags()
     {
         return $this->tags;
     }
 
-    public function setTags(?string $tags): self
+    /**
+     * Set the list of the tags.
+     *
+     * @param \string[] $tags
+     */
+    public function setTags($tags)
     {
         $this->tags = $tags;
-
-        return $this;
     }
 
     public function getEan(): ?int
@@ -174,16 +192,34 @@ class Product
         return $this;
     }
 
-    public function getFeatures(): ?string
+     public function setImageFile(File $image = null)
+    {
+        $this->imageFile = $image;
+
+        // VERY IMPORTANT:
+        // It is required that at least one field changes if you are using Doctrine,
+        // otherwise the event listeners won't be called and the file is lost
+        if ($image) {
+            // if 'updatedAt' is not defined in your entity, use another property
+            $this->updatedAt = new \DateTime('now');
+        }
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
+    }
+
+  
+    public function getFeatures()
     {
         return $this->features;
     }
 
-    public function setFeatures(?string $features): self
+   
+    public function setFeatures($features)
     {
         $this->features = $features;
-
-        return $this;
     }
 
     /**
@@ -210,5 +246,9 @@ class Product
         }
 
         return $this;
+    }
+
+     public function __toString():string{
+        return $this->name;
     }
 }

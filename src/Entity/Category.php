@@ -28,9 +28,15 @@ class Category
      */
     private $products;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Category", mappedBy="id_parent")
+     */
+    private $parent_categories;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
+        $this->parent_categories = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -77,4 +83,40 @@ class Category
 
         return $this;
     }
+
+    /**
+     * @return Collection|Category[]
+     */
+    public function getParentCategories(): Collection
+    {
+        return $this->parent_categories;
+    }
+
+    public function addParentCategory(Category $parentCategory): self
+    {
+        if (!$this->parent_categories->contains($parentCategory)) {
+            $this->parent_categories[] = $parentCategory;
+            $parentCategory->setIdParent($this);
+        }
+
+        return $this;
+    }
+
+    public function removeParentCategory(Category $parentCategory): self
+    {
+        if ($this->parent_categories->contains($parentCategory)) {
+            $this->parent_categories->removeElement($parentCategory);
+            // set the owning side to null (unless already changed)
+            if ($parentCategory->getIdParent() === $this) {
+                $parentCategory->setIdParent(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function __toString():string{
+        return $this->name;
+    }
+
 }
