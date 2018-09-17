@@ -17,6 +17,7 @@ easy_admin:
             show:
                 fields: ['id', 'active', 'username', 'email', 'purchases', { property: 'contract', template: 'contract.html.twig', base_path: '%app.path.user_contracts%' }]
             form: #edit
+                #title: 'Test title' #tinh chinh phan tua de cua trang, ta co the custom o day hoac o template
                 fields:
                     - { type: 'group', label: 'Account Information', icon: 'user', css_class: 'col-sm-4' }
                     - { property: 'username' }
