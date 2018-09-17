@@ -1,0 +1,13 @@
+{% extends '@EasyAdmin/form/bootstrap_3_layout.html.twig' %}
+{% block custom_button %}
+    <button class="btn btn-primary action-eraser">
+        <i class="fa fa-eraser"></i> Empty the fields
+    </button>
+{% endblock %}
+
+{% block head_javascript %}
+    {{parent()}}
+    <script type="text/javascript">
+        console.log("ok");
+    </script>
+{% endblock head_javascript %}
