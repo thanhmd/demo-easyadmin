@@ -9,11 +9,14 @@
 # The configuration options are explained in detail in the bundle documentation,
 # which is published at https://github.com/javiereguiluz/EasyAdminBundle
 easy_admin:
-    site_name: 'Thanhs Store'
+    site_name: 'Thanh Store'
     design:
-        form_theme:   'vertical'
+        form_theme:
+            - 'custom_form.html.twig'
         color_scheme: 'light'
         brand_color: '#1ABC9C'
         assets:
             css:
                 - '/bundles/easyadmin/stylesheet/demo.css'
+            js:
+                - '/bundles/easyadmin/javascript/custom/Product/clearFields.js'
