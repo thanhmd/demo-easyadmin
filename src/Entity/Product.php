@@ -87,6 +87,7 @@ class Product
     {
         $this->category = new ArrayCollection();
         $this->purchaseItems = new ArrayCollection();
+        $this->created_at = new \DateTime();
     }
 
     public function getId(): ?int
@@ -138,7 +139,6 @@ class Product
     public function setCreatedAt(\DateTimeInterface $created_at): self
     {
         $this->created_at = $created_at;
-
         return $this;
     }
 
