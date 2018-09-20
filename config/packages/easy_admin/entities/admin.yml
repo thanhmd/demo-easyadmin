@@ -1,0 +1,21 @@
+easy_admin:
+    entities:
+        Admin:
+          class: App\Entity\Admin
+          label: 'Admins'
+          list:
+            title: 'Admins'
+            action:
+              - { name: 'show', label: '', icon: 'search' }
+              - { name: 'edit', label: '', icon: 'edit' }
+              - { name: 'delete', label: '', icon: 'trash' }
+            fields:
+              - id
+              - username
+              - email
+          show:
+            title: 'Admin information'
+            fields:
+              - id
+              - username
+              - email
