@@ -12,11 +12,11 @@ easy_admin:
     site_name: 'Thanh Store'
     design:
         form_theme:
-            - 'custom_form.html.twig'
+            - 'easy_admin/custom_form.html.twig'
         color_scheme: 'light'
         brand_color: '#1ABC9C'
-        assets:
-            css:
-                - '/bundles/easyadmin/stylesheet/demo.css'
-            js:
-                - '/bundles/easyadmin/javascript/custom/Product/clearFields.js'
+#        assets:
+#            css:
+#                - '/bundles/easyadmin/stylesheet/demo.css'
+#            js:
+#                - '/bundles/easyadmin/javascript/custom/Product/clearFields.js'

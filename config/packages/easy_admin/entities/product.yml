@@ -13,6 +13,8 @@ easy_admin:
         # check out the configuration of the other entities to see how concise
         # can be the configuration of your backend
         Product:
+#            templates:
+#                new: 'custom_form.html.twig'
             class: App\Entity\Product
             label: 'Products'
             list:
