@@ -11,8 +11,8 @@
 easy_admin:
     site_name: 'Thanh Store'
     design:
-        form_theme:
-            - 'easy_admin/custom_form.html.twig'
+#        form_theme:
+#            - 'easy_admin/custom_form.html.twig'
         color_scheme: 'light'
         brand_color: '#1ABC9C'
 #        assets:
