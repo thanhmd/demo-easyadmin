@@ -1,4 +1,4 @@
-{% set theme_first =  easyadmin_config('design.form_theme') %}
+{% form_theme form with easyadmin_config('design.form_theme') %}
 
 {% set _entity_config = easyadmin_entity(app.request.query.get('entity')) %}
 {% trans_default_domain _entity_config.translation_domain %}
@@ -8,6 +8,7 @@
 
 {% block head_stylesheets %}
     {{ parent() }}
+    {#place css here#}
 
     <link rel="stylesheet" href="{{ asset('build/app.css') }}">
     <link rel="stylesheet" href="{{ asset('build/product.css') }}">
@@ -44,6 +45,7 @@
     </script>
 
     <script src="{{ asset('build/app.js') }}"></script>
+
     <script src="{{ asset('build/product.js') }}"></script>
 
     {{ include('@EasyAdmin/default/includes/_select2_widget.html.twig') }}
@@ -51,19 +53,11 @@
 
 {#{% extends '@EasyAdmin/default/new.html.twig' %}#}
 
-{#{% form_theme form 'form/fields.html.twig' %}#}
-
 {#{% block head_stylesheets %}#}
     {#{{ parent() }}#}
     {#<style type="text/css">#}
         {#.this-is-a-test {#}
             {#font-size: 20px;#}
-        {#}#}
-
-
-        {#.label_product_name {#}
-            {#font-size: 25px;#}
-            {#color: #0000F0;#}
         {#}#}
     {#</style>#}
 {#{% endblock %}#}
