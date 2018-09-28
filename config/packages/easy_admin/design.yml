@@ -9,12 +9,13 @@
 # The configuration options are explained in detail in the bundle documentation,
 # which is published at https://github.com/javiereguiluz/EasyAdminBundle
 easy_admin:
-    site_name: 'Thanh Store'
+    site_name: 'Small Martket'
     design:
-#        form_theme:
-#            - 'easy_admin/custom_form.html.twig'
+        form_theme:
+            - 'vertical'
+            - 'form/fields.html.twig'
         color_scheme: 'light'
-        brand_color: '#1ABC9C'
+        brand_color: 'purple'
 #        assets:
 #            css:
 #                - '/bundles/easyadmin/stylesheet/demo.css'

@@ -22,11 +22,13 @@
 // });
 //
 
-
-import Vue from 'vue';
+import Vue from 'vue'
 import Example from './components/Example'
+import Vuetify from 'vuetify'
+
+Vue.use(Vuetify)
 
 new Vue({
-    el: '#app',
+    el: '#test',
     components: {Example}
 });
