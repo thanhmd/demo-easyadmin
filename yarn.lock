@@ -4906,9 +4906,9 @@ vue-hot-reload-api@^2.2.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/vue-hot-reload-api/-/vue-hot-reload-api-2.3.1.tgz#b2d3d95402a811602380783ea4f566eb875569a2"
 
-vue-loader@14.2.2:
-  version "14.2.2"
-  resolved "http://registry.npmjs.org/vue-loader/-/vue-loader-14.2.2.tgz#c8cf3c2e29b6fb2ee595248a2aa6005038a125b3"
+vue-loader@14:
+  version "14.2.3"
+  resolved "https://registry.yarnpkg.com/vue-loader/-/vue-loader-14.2.3.tgz#3b39645c322d956e287d8d36eb77475f78c9b8e0"
   dependencies:
     consolidate "^0.14.0"
     hash-sum "^1.0.2"
@@ -4923,6 +4923,10 @@ vue-loader@14.2.2:
     vue-hot-reload-api "^2.2.0"
     vue-style-loader "^4.0.1"
     vue-template-es2015-compiler "^1.6.0"
+
+vue-router@^3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/vue-router/-/vue-router-3.0.1.tgz#d9b05ad9c7420ba0f626d6500d693e60092cc1e9"
 
 vue-style-loader@^4.0.1:
   version "4.1.2"
@@ -4945,6 +4949,10 @@ vue-template-es2015-compiler@^1.6.0:
 vue@^2.5.17:
   version "2.5.17"
   resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.17.tgz#0f8789ad718be68ca1872629832ed533589c6ada"
+
+vuetify@^1.2.5:
+  version "1.2.5"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-1.2.5.tgz#91578367709b20e406f2cdc7a164dfd70df954d9"
 
 watchpack@^1.4.0:
   version "1.6.0"

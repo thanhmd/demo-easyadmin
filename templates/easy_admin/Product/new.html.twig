@@ -10,7 +10,6 @@
 {% block body_class 'new new-' ~ _entity_config.name|lower %}
 
 {% block head_stylesheets %}
-    {{ dump() }}
     {{ parent() }}
 
     <link rel="stylesheet" href="{{ asset('build/app.css') }}">

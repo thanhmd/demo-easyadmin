@@ -1,5 +1,4 @@
 var Encore = require('@symfony/webpack-encore');
-
 Encore
     // directory where compiled assets will be stored
     .setOutputPath('public/build/')
@@ -17,9 +16,10 @@ Encore
      * Each entry will result in one JavaScript file (e.g. app.js)
      * and one CSS file (e.g. app.css) if you JavaScript imports CSS.
      */
-    .addEntry('app', './assets/js/app.js')
-    .addEntry('category', './assets/js/Category/category.js')
-    .addEntry('product', './assets/js/Product/product.js')
+    // .addEntry('app', './assets/js/app.js')
+    // .addEntry('category', './assets/js/Category/category.js')
+    // .addEntry('product', './assets/js/Product/product.js')
+    .addEntry('js/app', './assets/js/index.js')
 
     /*
      * FEATURE CONFIG
