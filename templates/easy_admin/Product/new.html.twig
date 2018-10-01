@@ -13,6 +13,7 @@
     {{ parent() }}
 
     <link rel="stylesheet" href="{{ asset('build/app.css') }}">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
 {% endblock %}
 
 {% block content_title %}
@@ -24,7 +25,25 @@
 
 {% block main %}
     {% block entity_form %}
-        {{ form(form) }}
+        <v-text-field
+                label="Regular"
+                single-line
+                placeholder="Full Name"
+                type="text"
+                color="blue"
+        ></v-text-field>
+        {#{{ form(form) }}#}
+
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+
+        {{ form_label(form) }}
+        {{ form_errors(form) }}
+        {{ form_widget(form) }}
+        {{ form_help(form) }}
+
+        {{ form_end(form) }}
+
     {% endblock entity_form %}
 {% endblock %}
 

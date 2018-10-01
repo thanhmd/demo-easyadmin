@@ -12,7 +12,7 @@ easy_admin:
     site_name: 'Small Market'
     design:
         form_theme:
-            - 'vertical'
+            - 'form/foundation_5_layout.html.twig'
             - 'form/fields.html.twig'
         color_scheme: 'light'
         brand_color: 'purple'
