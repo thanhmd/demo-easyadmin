@@ -42,25 +42,24 @@ easy_admin:
                     - tags
             form:
                 fields:
-                    - { type: 'group', css_class: 'col-sm-8', label: 'Basic information', icon: 'pencil' }
+                    - { type: 'group', css_class: 'col-sm-8', label: 'Basic information', icon: 'pencil', collapsible : true }
                     - { property: 'name', css_class: 'large' }
                     - { property: 'description', type: 'text' }
                     - { type: 'divider' }
-
                     - { property: 'category', type: 'easyadmin_autocomplete' }
 
-                    - { type: 'group', css_class: 'col-sm-4', label: 'Product Details', icon: 'cube' }
+                    - { type: 'group', css_class: 'col-sm-4', label: 'Product Details', icon: 'cube', collapsible : true }
                     - { property: 'ean', help: 'EAN-13 valid code. Leave empty if unknown.' }
                     - { property: 'price', type: 'number' }
                     - { type: 'section', label: 'Advanced Settings', icon: 'warning', help: 'Reserved for administrators use' }
                     - { property: 'enabled', label: 'Published' }
                     - { property: 'created_at' }
 
-                    - { type: 'group', css_class: 'col-sm-8 new-row' }
+                    - { type: 'group', css_class: 'col-sm-8 new-row', collapsible : true }
                     - { property: 'features' }
 
-                    - { type: 'group', css_class: 'col-sm-4' }
+                    - { type: 'group', css_class: 'col-sm-4', collapsible : true }
                     - { property: 'tags' }
 
-                    - { type: 'group', css_class: 'col-sm-4', label: 'Attachments', icon: 'paperclip' }
+                    - { type: 'group', css_class: 'col-sm-4', label: 'Attachments', icon: 'paperclip', collapsible : true }
                     - { property: 'imageFile', type: 'vich_image', type_options: { required: false } }

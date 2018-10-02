@@ -33,8 +33,9 @@ import 'material-design-icons-iconfont/dist/material-design-icons.css'
 Vue.use(Vuetify)
 
 new Vue({
+    delimiters: ['${', '}'],
     el: '#main',
     data: () => ({
-
+        show: false
     })
 });

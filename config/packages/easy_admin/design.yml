@@ -12,10 +12,11 @@ easy_admin:
     site_name: 'Small Market'
     design:
         form_theme:
-            - 'form/bootstrap_3_layout.html.twig'
+#            - 'form/bootstrap_3_layout.html.twig'
+            - 'form/bootstrap_3_layout_overide.html.twig'
             - 'form/fields.html.twig'
         color_scheme: 'light'
-        brand_color: 'purple'
+#        brand_color: '#0b48aa'
 #        assets:
 #            css:
 #                - '/bundles/easyadmin/stylesheet/demo.css'
