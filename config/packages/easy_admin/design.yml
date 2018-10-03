@@ -16,7 +16,7 @@ easy_admin:
             - 'form/bootstrap_3_layout_overide.html.twig'
             - 'form/fields.html.twig'
         color_scheme: 'light'
-#        brand_color: '#0b48aa'
+        brand_color: '#F28D1A'
 #        assets:
 #            css:
 #                - '/bundles/easyadmin/stylesheet/demo.css'

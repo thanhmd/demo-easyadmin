@@ -13,6 +13,7 @@
             <style>
                 {{ easyadmin_config('_internal.custom_css')|raw }}
             </style>
+            <link rel="stylesheet" href="{{ asset('build/app.css') }}">
         {% endblock %}
 
         {% for css_asset in easyadmin_config('design.assets.css') %}
@@ -157,7 +158,11 @@
         {% endblock wrapper %}
         </div>
 
-        {% block body_javascript %}{% endblock body_javascript %}
+        {% block body_javascript %}
+
+
+            <script type="text/javascript" src="{{ asset('build/app.js') }}"></script>
+        {% endblock body_javascript %}
 
         {% for js_asset in easyadmin_config('design.assets.js') %}
             <script src="{{ asset(js_asset) }}"></script>

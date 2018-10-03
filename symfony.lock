@@ -101,6 +101,9 @@
     "egulias/email-validator": {
         "version": "2.1.5"
     },
+    "felipyamorim/bootstrap-datetime-picker-bundle": {
+        "version": "dev-master"
+    },
     "fig/link-util": {
         "version": "1.0.0"
     },

@@ -7,7 +7,6 @@
     {#{% endspaceless %}#}
 {#{% endblock form_row %}#}
 
-
 {% block _product_name_widget %}
     <v-text-field label="Name" type="text" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}></v-text-field>
 {% endblock %}
@@ -16,10 +15,10 @@
 {% endblock %}
 
 {% block _product_description_widget %}
-    {#<v-text-field label="Description" type="text" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}></v-text-field>#}
-    <v-textarea label="Description" auto-grow {{ block('widget_attributes') }}>
-        {% if value is not empty %}{{ value }} {% endif %}
-    </v-textarea>
+    <v-text-field label="Description" type="text" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}></v-text-field>
+    {#<v-textarea label="Description" auto-grow {{ block('widget_attributes') }}>#}
+        {#{% if value is not empty %}{{ value }} {% endif %}#}
+    {#</v-textarea>#}
 {% endblock %}
 
 {% block _product_description_label %}
@@ -43,6 +42,105 @@
     {#<label for="product_enabled_published"> Published</label>#}
     <v-checkbox :label="`Published`" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %}></v-checkbox>
 {% endblock %}
+
+{% block _product_created_at_widget %}
+    {#time picker#}
+  <v-menu
+          ref="menu"
+          :close-on-content-click="false"
+          v-model="menu_time"
+          :nudge-right="40"
+          :return-value.sync="time"
+          lazy
+          transition="scale-transition"
+          offset-y
+
+          ref="menu2"
+          :close-on-content-click="false"
+          v-model="menu_date"
+          :nudge-right="40"
+          :return-value.sync="date"
+          lazy
+          transition="scale-transition"
+          offset-y
+  >
+      <v-text-field
+              slot="activator"
+              v-model="time"
+              label="Created at time*"
+              prepend-icon="access_time"
+              readonly
+      ></v-text-field>
+
+      <v-text-field
+              slot="activator"
+              v-model="date"
+              label="Created at date*"
+              prepend-icon="event"
+              readonly
+      ></v-text-field>
+
+      <v-time-picker
+              v-if="menu_time"
+              v-model="time"
+              @change="$refs.menu.save(time)"
+      ></v-time-picker>
+      <v-date-picker v-model="date" @input="$refs.menu2.save(date)"></v-date-picker>
+  </v-menu>
+
+{% endblock %}
+
+{% block _product_created_at_label %}
+
+{% endblock %}
+
+{% block _product_tags_widget %}
+    <v-combobox
+            v-model="model"
+            :items="tags_items"
+            :search-input.sync="search"
+            hide-selected
+            {#hint="Maximum of 5 tags"#}
+            label="Tags"
+            multiple
+            persistent-hint
+            small-chips
+    >
+        <template slot="no-data">
+            <v-list-tile>
+                <v-list-tile-content>
+                    <v-list-tile-title>
+                        No results matching "<strong>${ search }</strong>". Press <kbd>enter</kbd> to create a new one
+                    </v-list-tile-title>
+                </v-list-tile-content>
+            </v-list-tile>
+        </template>
+    </v-combobox>
+{% endblock %}
+
+{% block _product_tags_label %}
+
+{% endblock %}
+
+{#{% block form_widget %}#}
+
+{#{% endblock form_widget %}#}
+
+{% block _product_category_autocomplete_widget %}
+    <v-combobox
+            v-model="select"
+            :items="items"
+            label="Category"
+            multiple
+            chips
+    ></v-combobox>
+{% endblock %}
+
+{% block _product_category_label %}
+
+{% endblock %}
+
+
 
 {% block easyadmin_widget_groups %}
     {% for group_name, group_config in easyadmin_form_groups if not group_config.form_tab or group_config.form_tab == tab_name %}

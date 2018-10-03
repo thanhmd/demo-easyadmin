@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a5db8918f005279ce4290d55d364c474",
+    "content-hash": "ca41c03c324b59e80a787208e013e8c4",
     "packages": [
         {
             "name": "behat/transliterator",
@@ -1353,6 +1353,44 @@
                 "validator"
             ],
             "time": "2018-08-16T20:49:45+00:00"
+        },
+        {
+            "name": "felipyamorim/bootstrap-datetime-picker-bundle",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/felipyamorim/BootstrapDateTimePickerBundle.git",
+                "reference": "848f11fc318e238508a93288ea6ff40b79cca143"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/felipyamorim/BootstrapDateTimePickerBundle/zipball/848f11fc318e238508a93288ea6ff40b79cca143",
+                "reference": "848f11fc318e238508a93288ea6ff40b79cca143",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/collections": "^1.3",
+                "php": ">=5.5",
+                "symfony/framework-bundle": "^2.8|^3.0|^4.0"
+            },
+            "type": "symfony-bundle",
+            "autoload": {
+                "psr-4": {
+                    "FelipyAmorim\\BootstrapDateTimePickerBundle\\": "."
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Felipy Amorim",
+                    "email": "felipyamorim@gmail.com"
+                }
+            ],
+            "description": "Provides a fully-featured datetime picker field",
+            "time": "2018-05-17T14:09:20+00:00"
         },
         {
             "name": "fig/link-util",
@@ -6663,7 +6701,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "felipyamorim/bootstrap-datetime-picker-bundle": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
