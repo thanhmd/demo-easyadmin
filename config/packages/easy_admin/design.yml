@@ -17,7 +17,8 @@ easy_admin:
             - 'form/fields.html.twig'
         color_scheme: 'light'
         brand_color: '#F28D1A'
-#        assets:
+        assets:
+            favicon: '/assets/backend/favicon.png'
 #            css:
 #                - '/bundles/easyadmin/stylesheet/demo.css'
 #            js:

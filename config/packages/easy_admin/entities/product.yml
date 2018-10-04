@@ -45,7 +45,7 @@ easy_admin:
                     - { type: 'group', css_class: 'col-sm-7', label: 'Basic information', icon: 'pencil'}
                     - { property: 'name', css_class: 'large' }
                     - { property: 'description', type: 'text' }
-                    - { type: 'divider' }
+#                    - { type: 'divider' }
                     - { property: 'category', type: 'easyadmin_autocomplete' }
 
                     - { type: 'group', css_class: 'col-sm-5', label: 'Product Details', icon: 'cube' }

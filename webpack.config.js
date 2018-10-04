@@ -17,9 +17,8 @@ Encore
      * and one CSS file (e.g. app.css) if you JavaScript imports CSS.
      */
      .addEntry('app', './assets/js/app.js')
-    //.addEntry('category', './assets/js/Category/category.js')
-    //.addEntry('product', './assets/js/Product/product.js')
-    //.addEntry('js/app', './assets/js/index.js')
+     .addEntry('login', './assets/js/components/Login/login.js')
+     .addEntry('product', './assets/js/components/Product/product.js')
 
     /*
      * FEATURE CONFIG

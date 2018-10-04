@@ -4,3 +4,33 @@ label {
     max-width: 100%;
     margin-bottom: 0;
 }
+
+.main-sidebar, .wrapper {
+    background-color: #FFF;
+}
+
+.sidebar-menu > li:hover > a,
+.sidebar-menu .treeview-menu > li:hover > a{
+    background: #F5F5F5;
+    border-left-color: #FFF;
+}
+
+.sidebar-menu > li.active > a,
+.sidebar-menu > li.active > a > i,
+.sidebar-menu .treeview-menu > li.active > a,
+.sidebar-menu .treeview-menu > li.active > a > i,
+.sidebar-collapse .sidebar-menu > li.active.submenu-active > a,
+.sidebar-collapse .sidebar-menu > li:hover .treeview-menu > li.active > a {
+    background: #FFFF;
+    border-left-color: #FFF;
+    color: #1867c0;
+}
+
+.sidebar-menu > li > a, .sidebar-menu .treeview-menu > li > a {
+    color: #000;
+    font-weight: normal;
+}
+
+.main-sidebar {
+    box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 12px 3px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
+}
