@@ -8,6 +8,10 @@ import Vuetify from 'vuetify'
 import './product.css'
 import colors from "vuetify/es5/util/colors";
 
+// import {MODEL} from './constant'
+
+import axios from 'axios';
+
 Vue.use(Vuetify, {
     theme: {
         primary: colors.red.darken1, // #E53935
@@ -29,20 +33,37 @@ new Vue({
         date: null,
         menu_date: false,
 
-        //tag
-        select: ['Vuetify', 'Programming'],
-        items: [
-            'Programming',
-            'Design',
-            'Vue',
-            'Vuetify'
-        ],
+        //category tag
+        select: [],
+        items: [],
 
         //product tags
-        tags_items: ['Gaming', 'Programming', 'Vue', 'Vuetify'],
-        model: ['Vuetify'],
+        tags_items: ['1','2','3','4'],
+        model: [],
         search: null
     }),
+
+    created: function() {
+        axios.get('http://localhost:8000/api/getCategories')
+            .then(response => {
+                this.items = response.data.map(function(item){
+                    return item.name;
+                })
+                // console.log(response.data)
+            })
+            .catch(e => {
+                this.errors.push(e)
+            })
+    },
+
+    methods: {
+        test_input: function (event) {
+            // console.log("event trigger!");
+
+        }
+    }
+
+
 
     // watch: {
     //     model (val) {

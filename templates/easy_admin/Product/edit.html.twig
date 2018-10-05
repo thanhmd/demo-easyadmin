@@ -11,6 +11,11 @@
 
 {% block body_class 'edit edit-' ~ _entity_config.name|lower %}
 
+{% block head_stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('build/product.css') }}">
+{% endblock %}
+
 {% block content_title %}
 {% spaceless %}
     {% set _default_title = 'edit.page_title'|trans(_trans_parameters, 'EasyAdminBundle') %}
@@ -57,4 +62,5 @@
     </script>
 
     {{ include('@EasyAdmin/default/includes/_select2_widget.html.twig') }}
+    <script type="text/javascript" src="{{ asset('build/product.js') }}"></script>
 {% endblock %}

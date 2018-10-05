@@ -23,6 +23,6 @@ class CategoryController extends AbstractController
                 'No category found '
             );
         }
-        return new JsonResponse($categories);
+        return new JsonResponse($categories, 200, ["Access-Control-Allow-Origin"=>"*"]);
     }
 }

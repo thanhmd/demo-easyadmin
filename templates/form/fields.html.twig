@@ -110,7 +110,8 @@
             <v-list-tile>
                 <v-list-tile-content>
                     <v-list-tile-title>
-                        No results matching "<strong>${ search }</strong>". Press <kbd>enter</kbd> to create a new one
+                        {#No results matching "<strong>${ search }</strong>". Press <kbd>enter</kbd> to create a new one#}
+                        Press <kbd>enter</kbd> to create new tag
                     </v-list-tile-title>
                 </v-list-tile-content>
             </v-list-tile>
@@ -130,17 +131,21 @@
     <v-combobox
             v-model="select"
             :items="items"
+            hide-selected
             label="Category"
             multiple
+            persistent-hint
             chips
-    ></v-combobox>
+            name = "test"
+            autocomplete
+            v-on:input="test_input()"
+    >
+    </v-combobox>
 {% endblock %}
 
 {% block _product_category_label %}
 
 {% endblock %}
-
-
 
 {% block easyadmin_widget_groups %}
     {% for group_name, group_config in easyadmin_form_groups if not group_config.form_tab or group_config.form_tab == tab_name %}

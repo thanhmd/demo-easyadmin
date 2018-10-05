@@ -24,27 +24,8 @@
 
 {% block main %}
     {% block entity_form %}
-            {#<v-text-field#}
-                    {#label="Regular"#}
-                    {#single-line#}
-                    {#placeholder="Full Name"#}
-                    {#type="text"#}
-                    {#color="blue"#}
-            {#></v-text-field>#}
-        <v-app>
-            {{ form(form) }}
-        </v-app>
 
-
-        {#{{ form_start(form) }}#}
-        {#{{ form_errors(form) }}#}
-
-        {#{{ form_label(form) }}#}
-        {#{{ form_errors(form) }}#}
-        {#{{ form_widget(form) }}#}
-        {#{{ form_help(form) }}#}
-
-        {#{{ form_end(form) }}#}
+        {{ form(form) }}
 
     {% endblock entity_form %}
 {% endblock %}

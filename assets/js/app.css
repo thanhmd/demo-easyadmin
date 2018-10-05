@@ -30,6 +30,15 @@ label {
     color: #000;
     font-weight: normal;
 }
+.sidebar-menu > li.active.submenu-active > a {
+    border-left-color: transparent;
+    background: #FFFFFF;
+}
+
+.sidebar-menu > li.active > ul.treeview-menu > a {
+    color: #1867c0;
+}
+
 
 .main-sidebar {
     box-shadow: 0 8px 10px -5px rgba(0,0,0,.2), 0 16px 12px 3px rgba(0,0,0,.14), 0 6px 30px 5px rgba(0,0,0,.12);
